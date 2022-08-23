@@ -13,7 +13,7 @@ services:
         restart: always
         working_dir: /var/www/
         volumes:
-            - ./:/var/www
+            - ./nome-do-meu-projeto/:/var/www
         environment:
             - APP_NAME=wesllycode
             - DB_DATABASE=laravel
@@ -48,7 +48,7 @@ services:
         ports:
             - 8180:80
         volumes:
-            - ./:/var/www
+            - ./nome-do-meu-projeto:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks:
             - nome-da-minha-aplicacao
@@ -110,7 +110,7 @@ services:
         restart: unless-stopped
         command: "php artisan queue:work"
         volumes:
-            - ./:/var/www
+            - ./nome-do-meu-projeto:/var/www
         depends_on:
             - redis
             - app
