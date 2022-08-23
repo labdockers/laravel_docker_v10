@@ -26,25 +26,30 @@ Clone o repositório
 git clone https://github.com/labdockers/laravel_docker_v10.git
 ```
 
-Clone o repositório para criar um projeto do Laravel mais recente
+Acesse a pasta laravel_docker_v10 e clone o repositório para criar um projeto do Laravel mais recente
 ```sh
-git clone https://github.com/laravel/laravel.git example-project
+git clone https://github.com/laravel/laravel.git nome-do-meu-projeto
 ```
 <br>
+
+**Observação:**
+ - Você pode renomear em vez de *nome-do-meu-projeto* para o nome *app* ou qualquer outro tipo de nome que identifique o seu projeto. 
+   não esqueça de substituir os volumes no arquivo docker-compose para caminho da sua pasta do laravel.
+ - Na caminho da pasta ./nome-da-pasta/ ele vai copiar o que tiver dentro desssa pasta e copiar para /var/www dentro do container. Nos volumes coloque sempre o caminho
+   da pasta onde está  sua aplicação laravel.
+
+
+ ```sh
+ volumes:
+    - ./nome-do-meu-projeto/:/var/www
+ ```
 
 **Observação:**
  - Esses comandos funciona em ambient linux.
 
 <br>
 
-Vamos copiar os arquivos docker-compose.yml, Dockerfile e o diretório docker para o nosso 
-projeto recente criado.
-
-```sh
-cp -r laravel_docker_v10/* example-project/
-```
-
-Acesse a pasta do seu projeto (example-project) e vamos criar o arquivo .env
+Acesse a pasta do seu projeto (nome-do-meu-projeto) e vamos criar o arquivo .env
 ```sh
 cp -r .env.example .env
 ```
@@ -52,7 +57,7 @@ cp -r .env.example .env
 <br>
 
 **Observação:** 
-- Você pode mudar nome da sua pasta example-project para o que você quiser.
+- Você pode mudar nome da sua pasta nome-do-meu-projeto para o que você quiser.
 
 <br>
 
