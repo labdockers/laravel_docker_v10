@@ -33,7 +33,7 @@ services:
             - MAIL_PASSWORD=null
             - MAIL_ENCRYPTION=null
             - MAIL_FROM_ADDRES=my-email@example.com
-            - MAIL_FROM_NAME="${APP_NAME}"
+            - MAIL_FROM_NAME=wesllycode
         networks:
             - nome-da-minha-aplicacao
         depends_on:
@@ -93,10 +93,10 @@ services:
 
     # redis
     redis:
-        container_name: redis
-        image: redis:latest
-        networks:
-            - nome-da-minha-aplicacao
+      container_name: redis
+      image: redis:latest
+      networks:
+          - nome-da-minha-aplicacao
 
     # queue
     queue:
